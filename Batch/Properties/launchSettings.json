@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Batch": {
+      "commandName": "Project"
+    },
+    "テスト": {
+      "commandName": "Project",
+      "commandLineArgs": "1\r\n202512\r\n202601"
+    }
+  }
+}
