@@ -30,17 +30,17 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            label3 = new Label();
-            label4 = new Label();
-            send_checkbox = new CheckBox();
-            reception_checkbox = new CheckBox();
-            label5 = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
             checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
+            label5 = new Label();
+            reception_checkbox = new CheckBox();
+            send_checkbox = new CheckBox();
+            label4 = new Label();
+            label3 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
+            label2 = new Label();
             clear_btn = new Button();
             search_btn = new Button();
             dataGridView1 = new DataGridView();
@@ -85,72 +85,41 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "検索条件";
             // 
-            // label2
+            // checkBox3
             // 
-            label2.BackColor = SystemColors.ActiveBorder;
-            label2.Font = new Font("Yu Gothic UI", 9F);
-            label2.Location = new Point(6, 29);
-            label2.Name = "label2";
-            label2.Padding = new Padding(0, 0, 30, 0);
-            label2.Size = new Size(90, 25);
-            label2.TabIndex = 1;
-            label2.Text = "期間";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
+            checkBox3.AutoSize = true;
+            checkBox3.Checked = true;
+            checkBox3.CheckState = CheckState.Checked;
+            checkBox3.Location = new Point(268, 123);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(50, 19);
+            checkBox3.TabIndex = 11;
+            checkBox3.Text = "異常";
+            checkBox3.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // checkBox2
             // 
-            dateTimePicker1.Location = new Point(102, 31);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(107, 23);
-            dateTimePicker1.TabIndex = 2;
+            checkBox2.AutoSize = true;
+            checkBox2.Checked = true;
+            checkBox2.CheckState = CheckState.Checked;
+            checkBox2.Location = new Point(191, 123);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(71, 19);
+            checkBox2.TabIndex = 10;
+            checkBox2.Text = "再送待ち";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // checkBox1
             // 
-            dateTimePicker2.Location = new Point(240, 31);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(107, 23);
-            dateTimePicker2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(215, 34);
-            label3.Name = "label3";
-            label3.Size = new Size(19, 15);
-            label3.TabIndex = 4;
-            label3.Text = "～";
-            // 
-            // label4
-            // 
-            label4.BackColor = SystemColors.ActiveBorder;
-            label4.Font = new Font("Yu Gothic UI", 9F);
-            label4.Location = new Point(6, 72);
-            label4.Name = "label4";
-            label4.Padding = new Padding(0, 0, 30, 0);
-            label4.Size = new Size(90, 25);
-            label4.TabIndex = 5;
-            label4.Text = "分類";
-            label4.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // send_checkbox
-            // 
-            send_checkbox.AutoSize = true;
-            send_checkbox.Location = new Point(112, 76);
-            send_checkbox.Name = "send_checkbox";
-            send_checkbox.Size = new Size(50, 19);
-            send_checkbox.TabIndex = 6;
-            send_checkbox.Text = "送信";
-            send_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // reception_checkbox
-            // 
-            reception_checkbox.AutoSize = true;
-            reception_checkbox.Location = new Point(194, 76);
-            reception_checkbox.Name = "reception_checkbox";
-            reception_checkbox.Size = new Size(50, 19);
-            reception_checkbox.TabIndex = 7;
-            reception_checkbox.Text = "受信";
-            reception_checkbox.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(112, 123);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(73, 19);
+            checkBox1.TabIndex = 9;
+            checkBox1.Text = "処理済み";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -164,35 +133,80 @@
             label5.Text = "ステータス";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // checkBox1
+            // reception_checkbox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(112, 123);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(73, 19);
-            checkBox1.TabIndex = 9;
-            checkBox1.Text = "処理済み";
-            checkBox1.UseVisualStyleBackColor = true;
+            reception_checkbox.AutoSize = true;
+            reception_checkbox.Checked = true;
+            reception_checkbox.CheckState = CheckState.Checked;
+            reception_checkbox.Location = new Point(194, 76);
+            reception_checkbox.Name = "reception_checkbox";
+            reception_checkbox.Size = new Size(50, 19);
+            reception_checkbox.TabIndex = 7;
+            reception_checkbox.Text = "受信";
+            reception_checkbox.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // send_checkbox
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(191, 123);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(71, 19);
-            checkBox2.TabIndex = 10;
-            checkBox2.Text = "再送待ち";
-            checkBox2.UseVisualStyleBackColor = true;
+            send_checkbox.AutoSize = true;
+            send_checkbox.Checked = true;
+            send_checkbox.CheckState = CheckState.Checked;
+            send_checkbox.Location = new Point(112, 76);
+            send_checkbox.Name = "send_checkbox";
+            send_checkbox.Size = new Size(50, 19);
+            send_checkbox.TabIndex = 6;
+            send_checkbox.Text = "送信";
+            send_checkbox.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // label4
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(268, 123);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(50, 19);
-            checkBox3.TabIndex = 11;
-            checkBox3.Text = "異常";
-            checkBox3.UseVisualStyleBackColor = true;
+            label4.BackColor = SystemColors.ActiveBorder;
+            label4.Font = new Font("Yu Gothic UI", 9F);
+            label4.Location = new Point(6, 72);
+            label4.Name = "label4";
+            label4.Padding = new Padding(0, 0, 30, 0);
+            label4.Size = new Size(90, 25);
+            label4.TabIndex = 5;
+            label4.Text = "分類";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(215, 34);
+            label3.Name = "label3";
+            label3.Size = new Size(19, 15);
+            label3.TabIndex = 4;
+            label3.Text = "～";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.CustomFormat = "yyyy/MM";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new Point(240, 31);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(107, 23);
+            dateTimePicker2.TabIndex = 3;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CustomFormat = "yyyy/MM";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(102, 31);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(107, 23);
+            dateTimePicker1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.BackColor = SystemColors.ActiveBorder;
+            label2.Font = new Font("Yu Gothic UI", 9F);
+            label2.Location = new Point(6, 29);
+            label2.Name = "label2";
+            label2.Padding = new Padding(0, 0, 30, 0);
+            label2.Size = new Size(90, 25);
+            label2.TabIndex = 1;
+            label2.Text = "期間";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // clear_btn
             // 
