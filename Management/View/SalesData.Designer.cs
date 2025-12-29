@@ -85,16 +85,20 @@
             // ProductName_txt
             // 
             ProductName_txt.Location = new Point(112, 129);
+            ProductName_txt.MaxLength = 30;
             ProductName_txt.Name = "ProductName_txt";
             ProductName_txt.Size = new Size(247, 23);
             ProductName_txt.TabIndex = 12;
             // 
             // ProductNumber_txt
             // 
+            ProductNumber_txt.ImeMode = ImeMode.Disable;
             ProductNumber_txt.Location = new Point(112, 95);
+            ProductNumber_txt.MaxLength = 5;
             ProductNumber_txt.Name = "ProductNumber_txt";
             ProductNumber_txt.Size = new Size(247, 23);
             ProductNumber_txt.TabIndex = 11;
+            ProductNumber_txt.KeyPress += NumericalInputControl;
             // 
             // checkBox4
             // 

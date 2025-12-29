@@ -14,15 +14,28 @@ namespace Management
     {
         public SalesData()
         {
-            InitializeComponent();
-
-            /* ---- 期間の日付表示形式をyyyy/MM形式で表示 ----
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "yyyy年MM月";
-
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.CustomFormat = "yyyy年MM月";
-            */
+            InitializeComponent();            
         }
+
+        /// <summary>
+        /// 数値入力制御
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NumericalInputControl(object sender, KeyPressEventArgs e)
+        {
+            //バックスペース、Deleteキーが押された時は入力有効
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+
+            //数値0～9以外が押された時は入力無効
+            if ((e.KeyChar < '0' || '9' < e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
