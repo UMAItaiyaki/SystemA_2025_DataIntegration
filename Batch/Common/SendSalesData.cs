@@ -8,6 +8,6 @@ namespace Batch.Common
 {
     internal class SendSalesData
     {
-
+        // 店舗売上データ送信クラス
     }
 }

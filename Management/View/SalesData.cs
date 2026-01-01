@@ -14,7 +14,7 @@ namespace Management
     {
         public SalesData()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         /// <summary>
@@ -37,5 +37,14 @@ namespace Management
             }
         }
 
+        /// <summary>
+        /// 閉じるボタンの処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

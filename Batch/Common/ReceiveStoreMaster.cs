@@ -8,6 +8,6 @@ namespace Batch.Common
 {
     internal class ReceiveStoreMaster
     {
-
+        // 商品マスタ受信クラス
     }
 }

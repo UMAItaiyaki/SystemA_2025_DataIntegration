@@ -242,10 +242,13 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
             dataGridView1.Location = new Point(12, 262);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(752, 271);
             dataGridView1.TabIndex = 3;
             // 
@@ -253,36 +256,43 @@
             // 
             Column1.HeaderText = "販売日時";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "分類";
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.HeaderText = "商品番号";
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // Column4
             // 
             Column4.HeaderText = "商品名";
             Column4.Name = "Column4";
+            Column4.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.HeaderText = "売上数量";
             Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
             // Column6
             // 
             Column6.HeaderText = "割引適用額";
             Column6.Name = "Column6";
+            Column6.ReadOnly = true;
             // 
             // Column7
             // 
             Column7.HeaderText = "売上額";
             Column7.Name = "Column7";
+            Column7.ReadOnly = true;
             // 
             // label6
             // 
@@ -296,6 +306,7 @@
             // 
             // update_btn
             // 
+            update_btn.Enabled = false;
             update_btn.Location = new Point(536, 549);
             update_btn.Name = "update_btn";
             update_btn.Size = new Size(90, 36);
@@ -311,6 +322,7 @@
             close_btn.TabIndex = 6;
             close_btn.Text = "閉じる";
             close_btn.UseVisualStyleBackColor = true;
+            close_btn.Click += close_btn_Click;
             // 
             // data_btn
             // 

@@ -228,10 +228,13 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(12, 252);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(757, 291);
             dataGridView1.TabIndex = 9;
             // 
@@ -239,26 +242,31 @@
             // 
             Column1.HeaderText = "処理日時";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "分類";
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.HeaderText = "ファイル名";
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // Column4
             // 
             Column4.HeaderText = "ステータス";
             Column4.Name = "Column4";
+            Column4.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.HeaderText = "出力メッセージ";
             Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
             // close_btn
             // 
@@ -268,9 +276,11 @@
             close_btn.TabIndex = 11;
             close_btn.Text = "閉じる";
             close_btn.UseVisualStyleBackColor = true;
+            close_btn.Click += close_btn_Click;
             // 
             // update_btn
             // 
+            update_btn.Enabled = false;
             update_btn.Location = new Point(542, 549);
             update_btn.Name = "update_btn";
             update_btn.Size = new Size(90, 36);

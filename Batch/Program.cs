@@ -13,14 +13,14 @@ internal class Program
             // 店舗売上データ送信
             if (category == "1")
             {
-                //Console.WriteLine(category);
-                //Console.WriteLine(start);
-                //Console.WriteLine(end);                
+                Console.WriteLine(category);
+                Console.WriteLine(start);
+                Console.WriteLine(end);                
             }
             //店舗売上データ送信
             else if (category == "2")
             {
-                //Console.WriteLine(category);                
+                Console.WriteLine(category);                
             }
             // 正常終了
             Environment.Exit(0);
