@@ -92,7 +92,7 @@ namespace Batch
         }
 
         /// <summary>
-        /// 売上データ送信処理
+        /// 店舗売上データ送信処理
         /// </summary>
         private static void SendStoreSales(DateTime _Start, DateTime _End)
         {
