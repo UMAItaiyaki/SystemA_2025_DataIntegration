@@ -38,8 +38,8 @@
             send_checkbox = new CheckBox();
             label4 = new Label();
             label3 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            dtpEnd = new DateTimePicker();
+            dtpStart = new DateTimePicker();
             label2 = new Label();
             clear_btn = new Button();
             search_btn = new Button();
@@ -75,8 +75,8 @@
             groupBox1.Controls.Add(send_checkbox);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(dateTimePicker2);
-            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(dtpEnd);
+            groupBox1.Controls.Add(dtpStart);
             groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(12, 44);
             groupBox1.Name = "groupBox1";
@@ -178,23 +178,23 @@
             label3.TabIndex = 4;
             label3.Text = "～";
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            dateTimePicker2.CustomFormat = "yyyy/MM";
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(240, 31);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(107, 23);
-            dateTimePicker2.TabIndex = 3;
+            dtpEnd.CustomFormat = "yyyy/MM";
+            dtpEnd.Format = DateTimePickerFormat.Custom;
+            dtpEnd.Location = new Point(240, 31);
+            dtpEnd.Name = "dtpEnd";
+            dtpEnd.Size = new Size(107, 23);
+            dtpEnd.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            dateTimePicker1.CustomFormat = "yyyy/MM";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(102, 31);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(107, 23);
-            dateTimePicker1.TabIndex = 2;
+            dtpStart.CustomFormat = "yyyy/MM";
+            dtpStart.Format = DateTimePickerFormat.Custom;
+            dtpStart.Location = new Point(102, 31);
+            dtpStart.Name = "dtpStart";
+            dtpStart.Size = new Size(107, 23);
+            dtpStart.TabIndex = 2;
             // 
             // label2
             // 
@@ -319,8 +319,8 @@
         private CheckBox send_checkbox;
         private Label label4;
         private Label label3;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpEnd;
+        private DateTimePicker dtpStart;
         private Label label5;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
