@@ -17,12 +17,18 @@ namespace Management
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 売上管理画面へ遷移する処理
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             Form next = new SalesData();
             next.ShowDialog();
         }
 
+        /// <summary>
+        /// 送受信管理画面へ遷移する処理
+        /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
             Form next = new Transmission();
