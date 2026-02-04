@@ -13,7 +13,6 @@ namespace Batch.Common
     /// </summary>
     public class BinaryUtil
     {
-
         /// <summary>
         /// 商品マスタ読み込み
         /// </summary>
@@ -25,7 +24,7 @@ namespace Batch.Common
             // 戻り値用リスト
             List<ItemsFile> rtnData = new List<ItemsFile>();
 
-            // 受信folder
+            // 受信フォルダ
             string rcvFolder = @"D:\SystemA\rcv";
 
             try

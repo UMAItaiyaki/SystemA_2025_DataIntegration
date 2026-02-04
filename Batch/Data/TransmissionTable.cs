@@ -26,7 +26,7 @@ namespace Batch.Data
     /// <summary>
     /// 送受信テーブル
     /// </summary>
-    internal class TransmissionTable
+    public class TransmissionTable
     {
 
         /// <summary>ID</summary>

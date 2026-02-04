@@ -9,7 +9,7 @@ namespace Batch.Common
     /// <summary>
     /// ログクラス
     /// </summary>
-    public class Log
+    public static class Log
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         

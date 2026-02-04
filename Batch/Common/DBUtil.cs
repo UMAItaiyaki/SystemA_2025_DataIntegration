@@ -231,7 +231,6 @@ namespace Batch.Common
         /// <summary>
         /// 送受信データ更新
         /// </summary>
-        /// <param name="_FileName"></param>
         public void Update_Transmission(string _FileName)
         {
             try
@@ -261,6 +260,184 @@ namespace Batch.Common
                         command.ExecuteNonQuery();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 送受信表示データ取得
+        /// </summary>
+        public List<List<string>> Select_Transmission(DateTime _ProcessedFrom, DateTime _ProcessedTo, List<int> _Category, List<int> _Status)
+        {
+            // 戻り値
+            List<List<string>> rtnData = new List<List<string>>();
+
+            try
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // SQL 作成
+                    StringBuilder sql = new StringBuilder();
+                    sql.Append("SELECT ");
+                    sql.Append("    process_datetime, ");
+                    sql.Append("    category_view,");
+                    sql.Append("    file_name, ");
+                    sql.Append("    status_view, ");
+                    sql.Append("    output_message, ");
+                    sql.Append("FROM ");
+                    sql.Append($" {DBSchema}.send_and_receiving_detail ");
+                    sql.Append("WHERE ");
+                    sql.Append("    process_datetime >= @start ");
+                    sql.Append("AND ");
+                    sql.Append("    process_datetime < @end ");
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+
+                        command.Parameters.AddWithValue("@start", _ProcessedFrom);
+                        command.Parameters.AddWithValue("@end", _ProcessedTo);
+
+                        //分類の抽出条件
+                        List<string> categoryParam = new List<string>();
+                        for (int i = 0; i < _Category.Count; i++)
+                        {
+                            string param = $"@category{i}";
+                            categoryParam.Add(param);
+                            command.Parameters.AddWithValue(param, _Category[i]);
+                        }
+                        sql.Append($"AND category IN ({string.Join(",", categoryParam)}) ");
+
+                        // ステータスの抽出条件
+                        List<string> statusParam = new List<string>();
+                        for (int i = 0; i < _Status.Count; i++)
+                        {
+                            string param = $"@status{i}";
+                            statusParam.Add(param);
+                            command.Parameters.AddWithValue(param, _Status[i]);
+                        }
+                        sql.Append($"AND status IN ({string.Join(",", statusParam)}) ");
+
+                        command.CommandText = sql.ToString();
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read() != false)
+                            {
+                                List<string> record = new List<string>{
+                                    reader["process_datetime"].ToString(),
+                                    reader["category_view"].ToString(),
+                                    reader["file_name"].ToString(),
+                                    reader["status_view"].ToString(),
+                                    reader["output_message"].ToString(),
+                                };
+
+                                rtnData.Add(record);
+                            }
+                        }
+                    }                   
+                }
+                return rtnData;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 売上表示データ取得
+        /// </summary>
+        public List<List<string>> Select_Sales(DateTime _SaleFrom, DateTime _SaleTo, List<string> _Category, string _Number, string _Name)
+        {
+            // 戻り値
+            List<List<string>> rtnData = new List<List<string>>();
+
+            try
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // SQL作成
+                    StringBuilder sql = new StringBuilder();
+                    sql.Append("SELECT ");
+                    sql.Append("    sale_date, ");
+                    sql.Append("    category_view, ");
+                    sql.Append("    SUBSTRING(item_code, 4, 5) AS item_number, ");
+                    sql.Append("    item_name, ");
+                    sql.Append("    quantity, ");
+                    sql.Append("    discount, ");
+                    sql.Append("    total_amount ");
+                    sql.Append("FROM ");
+                    sql.Append($" {DBSchema}.sales_detail " );
+                    sql.Append("WHERE ");
+                    sql.Append("    sale_date >= @start");
+                    sql.Append("AND");
+                    sql.Append("    sale_date < @end ");
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+
+                        command.Parameters.AddWithValue("@start", _SaleFrom);
+                        command.Parameters.AddWithValue("@end", _SaleTo);
+
+                        // 商品分類の抽出条件
+                        List<string> categoryParam = new List<string>();
+                        for (int i = 0; i < _Category.Count; i++)
+                        {
+                            string param = $"@category{i}";
+                            categoryParam.Add(param);
+                            command.Parameters.AddWithValue(param, _Category[i]);
+                        }
+                        sql.Append($"AND category_id IN ({string.Join(",", categoryParam)}) ");
+
+                        // 商品番号の抽出条件
+                        if (string.IsNullOrEmpty(_Number) == false)
+                        {
+                            sql.Append($"AND SUBSTRING(item_code, 4, 5) = @number ");
+                            command.Parameters.AddWithValue("@number", _Number);
+                        }
+
+                        // 商品名の抽出条件（あいまい検索）
+                        if (string.IsNullOrEmpty(_Name) == false)
+                        {
+                            sql.Append($"AND item_name LIKE @name");
+                            command.Parameters.AddWithValue("@name", $"%{_Name}%");
+                        }
+
+                        command.CommandText = sql.ToString();
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read() != false)
+                            {
+                                List<string> record = new List<string>{
+                                    reader["sale_date"].ToString(),
+                                    reader["category_view"].ToString(),
+                                    reader["item_number"].ToString(),
+                                    reader["item_name"].ToString(),
+                                    reader["quantity"].ToString(),
+                                    reader["discount"].ToString(),
+                                    reader["total_amount"].ToString()
+                                };
+
+                                rtnData.Add(record);
+
+                            }
+                        }
+
+                    }
+
+                }
+
+                return rtnData;
             }
             catch (Exception ex)
             {
