@@ -11,7 +11,7 @@ namespace Batch.Common
     /// <summary>
     /// バイナリファイル操作クラス
     /// </summary>
-    internal class BinaryUtil
+    public class BinaryUtil
     {
 
         /// <summary>

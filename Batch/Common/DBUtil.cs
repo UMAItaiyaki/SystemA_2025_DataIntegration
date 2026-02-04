@@ -12,7 +12,7 @@ namespace Batch.Common
     /// <summary>
     /// DB操作クラス
     /// </summary>
-    internal class DBUtil
+    public class DBUtil
     {
         /// <summary>サーバ名</summary>
         private string DBServer;

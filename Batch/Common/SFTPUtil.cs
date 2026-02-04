@@ -11,7 +11,7 @@ namespace Batch.Common
     /// <summary>
     /// SFTP操作クラス
     /// </summary>
-    internal class SFTPUtil
+    public class SFTPUtil
     {
         /// <summary>サーバ名</summary>
         private string SFTPServer;
