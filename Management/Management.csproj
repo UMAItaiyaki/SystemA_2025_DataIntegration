@@ -11,7 +11,10 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Common\" />
   </ItemGroup>
+
+    <ItemGroup>
+		<ProjectReference Include="..\Batch\Batch.csproj" />
+	</ItemGroup>
 
 </Project>
