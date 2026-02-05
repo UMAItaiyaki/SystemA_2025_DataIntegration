@@ -150,13 +150,13 @@
             // 
             // dtpEnd
             // 
-            dtpEnd.Checked = false;
             dtpEnd.CustomFormat = "yyyy/MM";
             dtpEnd.Format = DateTimePickerFormat.Custom;
             dtpEnd.Location = new Point(251, 21);
             dtpEnd.Name = "dtpEnd";
+            dtpEnd.ShowUpDown = true;
             dtpEnd.Size = new Size(108, 23);
-            dtpEnd.TabIndex = 2;
+            dtpEnd.TabIndex = 7;
             // 
             // label5
             // 
@@ -174,8 +174,9 @@
             dtpStart.Format = DateTimePickerFormat.Custom;
             dtpStart.Location = new Point(112, 21);
             dtpStart.Name = "dtpStart";
+            dtpStart.ShowUpDown = true;
             dtpStart.Size = new Size(108, 23);
-            dtpStart.TabIndex = 2;
+            dtpStart.TabIndex = 7;
             // 
             // label4
             // 
