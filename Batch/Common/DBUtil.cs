@@ -66,14 +66,14 @@ namespace Batch.Common
                     StringBuilder sql = new StringBuilder();
                     sql.Append("SELECT ");
                     sql.Append("    s.item_code, ");
-                    sql.Append("    m.price");
+                    sql.Append("    m.price ");
                     sql.Append("    SUM(s.quantity) AS total_quantity, ");
                     sql.Append("    SUM(s.discount) AS total_discount ");
                     sql.Append("FROM ");
                     sql.Append($"   {DBSchema}.sales s ");
                     sql.Append("JOIN ");
-                    sql.Append($"   {DBSchema}.Items m");
-                    sql.Append("ON s.item_code = m.item_code");
+                    sql.Append($"   {DBSchema}.Items m ");
+                    sql.Append("    ON s.item_code = m.item_code ");
                     sql.Append("WHERE ");
                     sql.Append("    s.sale_date >= @start ");
                     sql.Append("AND ");
@@ -81,7 +81,7 @@ namespace Batch.Common
                     sql.Append("GROUP BY ");
                     sql.Append("    s.item_code, m.price");
                     sql.Append("ORDER BY ");
-                    sql.Append("    s.item_code ASC");
+                    sql.Append("    s.item_code ASC ");
 
                     //店舗コード
                     string shopCode = ConfigurationManager.AppSettings["SHOP_CODE"];
@@ -288,7 +288,7 @@ namespace Batch.Common
                     sql.Append("    category_view,");
                     sql.Append("    file_name, ");
                     sql.Append("    status_view, ");
-                    sql.Append("    output_message, ");
+                    sql.Append("    output_message ");
                     sql.Append("FROM ");
                     sql.Append($" {DBSchema}.send_and_receiving_detail ");
                     sql.Append("WHERE ");
@@ -377,8 +377,8 @@ namespace Batch.Common
                     sql.Append("FROM ");
                     sql.Append($" {DBSchema}.sales_detail " );
                     sql.Append("WHERE ");
-                    sql.Append("    sale_date >= @start");
-                    sql.Append("AND");
+                    sql.Append("    sale_date >= @start ");
+                    sql.Append("AND ");
                     sql.Append("    sale_date < @end ");
 
                     using (var command = new SqlCommand())
@@ -396,7 +396,7 @@ namespace Batch.Common
                             categoryParam.Add(param);
                             command.Parameters.AddWithValue(param, _Category[i]);
                         }
-                        sql.Append($"AND category_id IN ({string.Join(",", categoryParam)}) ");
+                        sql.Append($"AND item_classification IN ({string.Join(",", categoryParam)}) ");
 
                         // 商品番号の抽出条件
                         if (string.IsNullOrEmpty(_Number) == false)

@@ -44,11 +44,11 @@
             clear_btn = new Button();
             search_btn = new Button();
             dgvResult = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
+            RowProcessedAt = new DataGridViewTextBoxColumn();
+            RowCategory = new DataGridViewTextBoxColumn();
+            RowFileName = new DataGridViewTextBoxColumn();
+            RowStatus = new DataGridViewTextBoxColumn();
+            RowOutputMessage = new DataGridViewTextBoxColumn();
             close_btn = new Button();
             update_btn = new Button();
             groupBox1.SuspendLayout();
@@ -80,7 +80,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(12, 44);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(489, 202);
+            groupBox1.Size = new Size(692, 202);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "検索条件";
@@ -212,9 +212,10 @@
             // 
             // clear_btn
             // 
-            clear_btn.Location = new Point(644, 191);
+            clear_btn.Font = new Font("Yu Gothic UI", 15F);
+            clear_btn.Location = new Point(1045, 176);
             clear_btn.Name = "clear_btn";
-            clear_btn.Size = new Size(90, 55);
+            clear_btn.Size = new Size(108, 70);
             clear_btn.TabIndex = 8;
             clear_btn.Text = "条件クリア";
             clear_btn.UseVisualStyleBackColor = true;
@@ -222,9 +223,10 @@
             // 
             // search_btn
             // 
-            search_btn.Location = new Point(542, 191);
+            search_btn.Font = new Font("Yu Gothic UI", 15F);
+            search_btn.Location = new Point(891, 176);
             search_btn.Name = "search_btn";
-            search_btn.Size = new Size(90, 55);
+            search_btn.Size = new Size(108, 70);
             search_btn.TabIndex = 7;
             search_btn.Text = "検索";
             search_btn.UseVisualStyleBackColor = true;
@@ -232,50 +234,65 @@
             // 
             // dgvResult
             // 
+            dgvResult.AllowUserToAddRows = false;
             dgvResult.AllowUserToDeleteRows = false;
             dgvResult.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResult.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
+            dgvResult.Columns.AddRange(new DataGridViewColumn[] { RowProcessedAt, RowCategory, RowFileName, RowStatus, RowOutputMessage });
             dgvResult.Location = new Point(12, 252);
             dgvResult.Name = "dgvResult";
             dgvResult.ReadOnly = true;
-            dgvResult.Size = new Size(757, 291);
+            dgvResult.RowHeadersVisible = false;
+            dgvResult.RowTemplate.Height = 22;
+            dgvResult.RowTemplate.ReadOnly = true;
+            dgvResult.Size = new Size(1178, 253);
             dgvResult.TabIndex = 9;
             // 
-            // Column1
+            // RowProcessedAt
             // 
-            Column1.HeaderText = "処理日時";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
+            RowProcessedAt.HeaderText = "処理日時";
+            RowProcessedAt.MinimumWidth = 6;
+            RowProcessedAt.Name = "RowProcessedAt";
+            RowProcessedAt.ReadOnly = true;
+            RowProcessedAt.Width = 180;
             // 
-            // Column2
+            // RowCategory
             // 
-            Column2.HeaderText = "分類";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
+            RowCategory.HeaderText = "分類";
+            RowCategory.MinimumWidth = 6;
+            RowCategory.Name = "RowCategory";
+            RowCategory.ReadOnly = true;
+            RowCategory.Width = 125;
             // 
-            // Column3
+            // RowFileName
             // 
-            Column3.HeaderText = "ファイル名";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
+            RowFileName.HeaderText = "ファイル名";
+            RowFileName.MinimumWidth = 6;
+            RowFileName.Name = "RowFileName";
+            RowFileName.ReadOnly = true;
+            RowFileName.Width = 260;
             // 
-            // Column4
+            // RowStatus
             // 
-            Column4.HeaderText = "ステータス";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
+            RowStatus.HeaderText = "ステータス";
+            RowStatus.MinimumWidth = 6;
+            RowStatus.Name = "RowStatus";
+            RowStatus.ReadOnly = true;
+            RowStatus.Width = 125;
             // 
-            // Column5
+            // RowOutputMessage
             // 
-            Column5.HeaderText = "出力メッセージ";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
+            RowOutputMessage.HeaderText = "出力メッセージ";
+            RowOutputMessage.MinimumWidth = 6;
+            RowOutputMessage.Name = "RowOutputMessage";
+            RowOutputMessage.ReadOnly = true;
+            RowOutputMessage.Width = 485;
             // 
             // close_btn
             // 
-            close_btn.Location = new Point(644, 549);
+            close_btn.Font = new Font("Yu Gothic UI", 15F);
+            close_btn.Location = new Point(1045, 515);
             close_btn.Name = "close_btn";
-            close_btn.Size = new Size(90, 36);
+            close_btn.Size = new Size(108, 70);
             close_btn.TabIndex = 11;
             close_btn.Text = "閉じる";
             close_btn.UseVisualStyleBackColor = true;
@@ -284,9 +301,10 @@
             // update_btn
             // 
             update_btn.Enabled = false;
-            update_btn.Location = new Point(542, 549);
+            update_btn.Font = new Font("Yu Gothic UI", 15F);
+            update_btn.Location = new Point(891, 515);
             update_btn.Name = "update_btn";
-            update_btn.Size = new Size(90, 36);
+            update_btn.Size = new Size(108, 70);
             update_btn.TabIndex = 10;
             update_btn.Text = "更新";
             update_btn.UseVisualStyleBackColor = true;
@@ -296,7 +314,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(781, 597);
+            ClientSize = new Size(1214, 597);
             Controls.Add(close_btn);
             Controls.Add(update_btn);
             Controls.Add(dgvResult);
@@ -332,12 +350,12 @@
         private Button clear_btn;
         private Button search_btn;
         private DataGridView dgvResult;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private Button close_btn;
         private Button update_btn;
+        private DataGridViewTextBoxColumn RowProcessedAt;
+        private DataGridViewTextBoxColumn RowCategory;
+        private DataGridViewTextBoxColumn RowFileName;
+        private DataGridViewTextBoxColumn RowStatus;
+        private DataGridViewTextBoxColumn RowOutputMessage;
     }
 }

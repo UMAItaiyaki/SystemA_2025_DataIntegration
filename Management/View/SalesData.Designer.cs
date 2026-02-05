@@ -251,6 +251,9 @@
             dgvResult.Location = new Point(12, 262);
             dgvResult.Name = "dgvResult";
             dgvResult.ReadOnly = true;
+            dgvResult.RowHeadersVisible = false;
+            dgvResult.RowTemplate.Height = 22;
+            dgvResult.RowTemplate.ReadOnly = true;
             dgvResult.Size = new Size(752, 271);
             dgvResult.TabIndex = 3;
             // 
@@ -329,6 +332,7 @@
             // 
             // data_btn
             // 
+            data_btn.Enabled = false;
             data_btn.Location = new Point(17, 549);
             data_btn.Name = "data_btn";
             data_btn.Size = new Size(168, 36);

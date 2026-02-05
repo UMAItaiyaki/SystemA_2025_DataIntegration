@@ -100,7 +100,7 @@ namespace Batch.Common
                                 StringToBcd(data.ShopCode),                     // 店舗コード(BCD:4バイト)
                                 StringToBcd(data.SummaryTarget),                // 集計年月(BCD:3バイト)
                                 StringToBcd(data.ItemCode),                     // 商品コード(BCD:4バイト)
-                                IntToBin(data.Price),                        // 販売単価(BCD:4バイト)
+                                IntToBin(data.Price),                        // 販売単価(BIN:4バイト)
                                 IntToBin(data.TotalQuantity),                // 売上総数量(BCD:4バイト)
                                 IntToBin(data.TotalDiscount),                // 割引適用総額(BCD:4バイト)
                                 new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00 }     // 予約領域(BCD:5バイト)

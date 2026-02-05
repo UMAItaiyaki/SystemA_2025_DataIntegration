@@ -100,6 +100,9 @@ namespace Management
                 // 更新ボタンを有効化
                 update_btn.Enabled = true;
 
+                // 売上データ送信ボタンを有効化
+                data_btn.Enabled = true;
+
             }
             catch (Exception ex)
             {
@@ -184,7 +187,7 @@ namespace Management
         /// <summary>「売上データ送信」ボタンの処理</summary>>
         private void data_btn_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
